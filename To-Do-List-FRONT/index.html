@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>To do List</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Tareas</h1>
+    </header>
+
+    <main>
+        <section id="ntarea-container">
+            <form action="" id="form-tarea">
+                <input type="text" id="nTarea" placeholder="Escribí acá una nueva tarea" required>
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <section id="lista-container">
+            <ul id="listaTareas">
+                <!--Acá se insertarán con JS-->
+            </ul>
+        </section>
+    </main>
+
+    <!--Esto se va a mostrar oculto-->
+    <div id="editTarea" class="oculto">
+        <div class="edit-container">
+            <h2>Editar tarea</h2>
+            <form action="" id="edit-form">
+                <label for="edit-titulo">Título:</label>
+                <input type="text" id="edit-titulo" required>
+            </form>
+        </div>
+        <div class="btn-edit">
+            <button type="submit">Guardar</button>
+            <button type="button" id="cancel-edit">Cancelar</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Proyecto To-Do List - Prácticas Profesionalizantes III.</p>
+    </footer>
+    <!--AGREGAR EL SCRIPT-->
+</body>
+</html>
