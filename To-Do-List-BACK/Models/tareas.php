@@ -1,4 +1,7 @@
 <?php
+
+use Laminas\Diactoros\Response\JsonResponse;
+
 require_once __DIR__ . '/../Settings/db.php';
 
 class Tareas{
@@ -9,6 +12,23 @@ class Tareas{
         $this->con = DB::dbConnect();
     }
 
+    //METODO CREATE
+    public function create($data){
+      $query=  "INSERT INTO tareas(nombreT,descripcion) VALUES(?,?)";
+        try{
+        $stmt=$this->con->prepare($query);
+        $stmt->bind_param('ss',$data['nombreT'],$data['descripcion']);
+        $stmt->execute();
+
+        if($stmt->error){
+            throw new Exception('Error al almacenar los datos');
+        }
+        return ['Message'=>'Datos alamcenados correctamente'];
+
+        }
+        catch(\Throwable $th)
+        { return new JsonResponse(['Message'=>$th->getMessage()]); }
+    }
     //Método Update
     public function update($id,$data){
         $query = 'UPDATE tareas SET nombreT = ?, descripcion = ? WHERE id_tareas = ?';
