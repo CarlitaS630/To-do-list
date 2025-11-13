@@ -26,13 +26,14 @@ class TareasController{
          return new JsonResponse(['Message'=>'Error dato invalido']);
     }
 
-    $data_arr[
-        'Descripcion'=>$descripcion,
-        'Nombre de la Tarea'=>$nombreT
+    $data_arr=[
+   
+        'nombreT'=>$nombreT,
+        'descripcion'=>$descripcion
     ];
 
     $tarea= new Tareas;
-    return $tarea->create($data);
+    return $tarea->create($data_arr);
     }
     
     //Método update
