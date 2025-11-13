@@ -46,6 +46,27 @@ class Tareas{
 
         return ['message' => 'Tarea actualizada satisfactoriamente'];
     }
-    
+
+
+    // Metodo Delete
+    public function delete($id)
+    {
+        $query = 'DELETE FROM tareas WHERE id = ?';
+        try {
+            $stmt = $this->con->prepare($query);
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+
+            if ($stmt->error) {
+                throw new Exception('No se pudo eliminar la tarea');
+            }
+
+            return ['message' => 'Tarea eliminada'];
+        } catch (\Throwable $th) {
+            return ['message' => $th->getMessage()];
+        }
+    }
 }
+
+
 ?>
