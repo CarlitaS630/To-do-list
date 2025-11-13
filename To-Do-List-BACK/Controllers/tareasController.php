@@ -6,6 +6,34 @@ use Laminas\Diactoros\ServerRequest;
 require_once __DIR__ . '/../Models/tareas.php';
 
 class TareasController{
+
+    //METODO CREATE 
+    public function create(ServerRequest $request){
+    $data=$request->getParsedBody();
+    if(empty($data)){
+        $json=$request->getBody()->getContents();
+        $data= json_decode($json) ?? [];
+    }
+
+    $descripcion=$data->descripcion;
+    $nombreT=$data->nombreT;
+
+    if(!preg_match('',$descripcion))
+    {
+        return new JsonResponse(['Message'=>'Error dato invalido']);
+    }
+    if(!preg_match('',$nombreT)){
+         return new JsonResponse(['Message'=>'Error dato invalido']);
+    }
+
+    $data_arr[
+        'Descripcion': $descripcion,
+        'Nombre de la Tarea': $nombreT
+    ];
+
+    $tarea= new Tareas;
+    return $tarea->create($data);
+    }
     
     //Método update
     public function actTarea(ServerRequest $request, $id)
