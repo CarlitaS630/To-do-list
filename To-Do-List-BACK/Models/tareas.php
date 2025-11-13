@@ -2,6 +2,9 @@
 
 use Laminas\Diactoros\Response\JsonResponse;
 
+
+use Laminas\Diactoros\Response\JsonResponse;
+
 require_once __DIR__ . '/../Settings/db.php';
 
 class Tareas{
