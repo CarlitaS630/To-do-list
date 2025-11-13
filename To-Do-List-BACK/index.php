@@ -29,4 +29,5 @@ $router->post('/tareas',[TareasController::class,'createT']);
 //UPDATE
 $router->put('/tareas/{id}',[TareasController::class,'actTarea']);
 //DELETE
+$router->delete('/tareas/{id}',[TareasController::class,'delete']);
 $router->dispatch();
