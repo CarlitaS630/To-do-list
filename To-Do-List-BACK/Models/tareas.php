@@ -27,7 +27,7 @@ class Tareas{
 
         }
         catch(\Throwable $th)
-        { return new JsonResponse(['Message'=>$th->getMessage()]); }
+        { return ['Message'=>$th->getMessage()]; }
     }
     //Método Update
     public function update($id,$data){
