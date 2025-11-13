@@ -14,8 +14,8 @@ El frontend no almacena datos por sí mismo: solo los muestra y envía peticione
   - Un formulario (`<form>` con input y botones).
   - Formulario flotante para editar una tarea seleccionada.
 - Incluye los scripts:
-  - <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  - <script src="js/main.js"></script>
+  - `<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>`
+  - `<script src="js/main.js"></script>`
 
 ### `styles.css`
 - Define el diseño visual:
