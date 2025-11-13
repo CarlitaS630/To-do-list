@@ -27,4 +27,5 @@ $router->get('/', function () {
 //UPDATE
 $router->put('/tareas/{id}',[TareasController::class,'actTarea']);
 //DELETE
+$router->delete('/tareas/{id}',[TareasController::class,'delete']);
 $router->dispatch();
