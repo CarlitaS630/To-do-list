@@ -69,5 +69,16 @@ class TareasController{
         $tarea = new tareas;
         return new JsonResponse($tarea->update($data_arr,$id_al));
     }
+    //metodo delete by id
+
+    public function delete($id)
+    {
+        $id_al=(int) $id;
+    if(!is_int(intval($id_al))|| intval($id_al)<1){
+    return new JsonResponse(['message'=>'error en la eliminacion']);
+    }
+        $tarea = new tareas;
+        return new JsonResponse($tarea->delete($id));
+    }
 }
 ?>
