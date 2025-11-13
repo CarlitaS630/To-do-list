@@ -18,11 +18,11 @@ class TareasController{
     $descripcion=$data->descripcion;
     $nombreT=$data->nombreT;
 
-    if(!preg_match('',$descripcion))
+    if(!preg_match('/^.+$/s',$descripcion))
     {
         return new JsonResponse(['Message'=>'Error dato invalido']);
     }
-    if(!preg_match('',$nombreT)){
+    if(!preg_match('/^(?=.*[a-z])(?=.*[A-Z])[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/u',$nombreT)){
          return new JsonResponse(['Message'=>'Error dato invalido']);
     }
 
