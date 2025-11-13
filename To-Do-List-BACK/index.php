@@ -23,7 +23,9 @@ $router->get('/', function () {
 });
 
 //GET
+$router->get('/tareas',[TareasController::class,'get']);
 //CREATE
+$router->post('/tareas',[TareasController::class,'createT']);
 //UPDATE
 $router->put('/tareas/{id}',[TareasController::class,'actTarea']);
 //DELETE

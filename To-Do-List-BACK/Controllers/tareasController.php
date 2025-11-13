@@ -8,7 +8,7 @@ require_once __DIR__ . '/../Models/tareas.php';
 class TareasController{
 
     //METODO CREATE 
-    public function create(ServerRequest $request){
+    public function createT(ServerRequest $request){
     $data=$request->getParsedBody();
     if(empty($data)){
         $json=$request->getBody()->getContents();
