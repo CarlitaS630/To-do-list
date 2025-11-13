@@ -27,8 +27,8 @@ class TareasController{
     }
 
     $data_arr[
-        'Descripcion': $descripcion,
-        'Nombre de la Tarea': $nombreT
+        'Descripcion'=>$descripcion,
+        'Nombre de la Tarea'=>$nombreT
     ];
 
     $tarea= new Tareas;
