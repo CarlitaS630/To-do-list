@@ -7,6 +7,12 @@ require_once __DIR__ . '/../Models/tareas.php';
 
 class TareasController{
 
+//MÉTODO GET
+     public function muestraT(){
+        $tarea = new tareas;
+        return new JsonResponse($tarea->get());
+    }
+
     //METODO CREATE 
     public function createT(ServerRequest $request){
     $data=$request->getParsedBody();
