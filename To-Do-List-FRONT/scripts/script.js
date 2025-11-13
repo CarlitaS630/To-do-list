@@ -19,3 +19,13 @@ const editarTarea = async(id, data) => {
         alert("Error al editar esta tarea");
     }
 }
+
+// DELETE
+const eliminarTarea = async (id) => {
+  try {
+    const res = await axios.delete(`${API}/${id}`);
+    console.log("Tarea eliminada:", res.data || "Operación exitosa");
+  } catch (error) {
+    console.error("Error al eliminar tarea:", error.message);
+  }
+};
